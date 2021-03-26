@@ -1,9 +1,66 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>registro</ion-title>
+    <ion-title>REGISTRO</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
 
+    <ion-row>
+      <ion-col>
+        <img src="../../../assets/img/adduser.svg" alt="" class="add">
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Nombre:</ion-label>
+          <ion-input placeholder="Ej:Juan123" [(ngModel)]="name" name="name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Correo electronico:</ion-label>
+          <ion-input type="email" placeholder="Ej:juan12@gmail.com" [(ngModel)]="email" name="email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Contraseña</ion-label>
+          <ion-input type="password" placeholder="***********" [(ngModel)]="password" name="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Confirmar contraseña</ion-label>
+          <ion-input type="password" placeholder="***********"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button  fill="clear" shape="round" class="btnRegistro" (click)="onSubmitRegister()">
+          Registrate aquí!
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
 </ion-content>
+
+<ion-footer>
+    <img src="../../../assets/img/car.png" alt="car" class="car">
+</ion-footer>

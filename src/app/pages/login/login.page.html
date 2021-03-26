@@ -17,7 +17,7 @@
       <ion-col>
         <ion-item>
           <ion-label>Nombre de usuario:</ion-label>
-          <ion-input placeholder="Ejemplo:juan123"></ion-input>
+          <ion-input  type="email" placeholder="Ej:juan123" [(ngModel)]="email"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -26,14 +26,14 @@
       <ion-col>
         <ion-item>
           <ion-label>Contraseña</ion-label>
-          <ion-input placeholder="***********"></ion-input>
+          <ion-input  type="password" placeholder="***********" [(ngModel)]="password"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>        
-        <ion-button  fill="clear" shape="round" class="ion-button1" routerLink="/inventario">
+        <ion-button  fill="clear" shape="round" class="ion-button1" (click)="onSubmitLogin()" >
           Iniciar sesión
         </ion-button>
       </ion-col>
@@ -53,7 +53,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-button  fill="clear" shape="round" class="ion-button2">
+        <ion-button  fill="clear" shape="round" class="ion-button2" routerLink="/registro">
           Registrate aquí
         </ion-button>
       </ion-col>
@@ -62,3 +62,7 @@
 
   </ion-grid>
 </ion-content>
+
+<ion-footer>
+    <img src="../../../assets/img/car.png" alt="car" class="car">
+</ion-footer>

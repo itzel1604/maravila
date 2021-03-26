@@ -1,13 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>inventario</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content>
 
+    <ion-card *ngFor="let categoria of categorias" button [routerLink]="['/productos', categoria.uid]">
+        <ion-card-header>
+          <ion-card-title>{{ categoria.name }}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+         <img [src]=" [categoria.img] " alt="">
+        </ion-card-content>
+    </ion-card>
+
 </ion-content>
 
-<ion-footer>
-  <img src=".././../../assets/img/car.png" alt="" class="car">
-</ion-footer>
+<app-footer></app-footer>

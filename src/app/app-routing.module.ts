@@ -16,6 +16,14 @@ const routes: Routes = [
   {
     path: 'inventario',
     loadChildren: () => import('./pages/inventario/inventario.module').then( m => m.InventarioPageModule)
+  },
+  {
+    path: 'productos/:id',
+    loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule)
+  },
+  {
+    path: 'producto',
+    loadChildren: () => import('./pages/producto/producto.module').then( m => m.ProductoPageModule)
   }
 ];
 @NgModule({
