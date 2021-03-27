@@ -2,15 +2,32 @@
 
 <ion-content>
 
-    <ion-card *ngFor="let categoria of categorias" button [routerLink]="['/productos', categoria.uid]">
-        <ion-card-header>
-          <ion-card-title>{{ categoria.name }}</ion-card-title>
+    <ion-card *ngFor="let categoria of categorias">
+        <ion-card-header class="card-header">
+          <ion-card-title class="car-title">{{ categoria.name }}</ion-card-title>
+          <ion-img src="../../../assets/img/ver.png" class="img"></ion-img>
         </ion-card-header>
       
         <ion-card-content>
-         <img [src]=" [categoria.img] " alt="">
+         <img [src]=" [categoria.img] " alt="" button [routerLink]="['/productos', categoria.uid]">
+
+         <ion-buttons>
+
+           <ion-button color="success" fill="solid">
+            <ion-icon name="pencil-outline"></ion-icon>
+           </ion-button>
+
+           <ion-button color="danger" fill="solid">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+
+         </ion-buttons>
         </ion-card-content>
     </ion-card>
+
+      <ion-button  fill="solid" color="primary"  >
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
 
 </ion-content>
 

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>¿Olvidate tu contraseña?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form class="ion-padding-top" (submit)="sendLinkReset()">
+
+  <div class="ion-text-center">
+    <small>
+      Escribir correo para recibir instrucciones:
+    </small>
+  </div>
+
+  <ion-item>
+  <ion-input type="text" [(ngModel)]="email" placeholder="Ingrese su email" name="email"></ion-input>
+  </ion-item>
+
+  <ion-button  expand="block" class="ion-margin-top" type="submit" color="primary">
+    Enviar
+  </ion-button>
+
+  </form>
+
+</ion-content>

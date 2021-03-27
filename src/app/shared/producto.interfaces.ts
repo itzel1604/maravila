@@ -1,6 +1,7 @@
 export interface Producto{
+    uid: string,
     name: string,
-    imagen: string,
+    img: string,
     cantidad: number,
     precio: number,
     descripcion: string

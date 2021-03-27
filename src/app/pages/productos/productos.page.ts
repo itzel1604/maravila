@@ -12,42 +12,34 @@ import { Producto } from '../../shared/producto.interfaces';
 export class ProductosPage implements OnInit {
 
   uid = '';
-  categoria: Categoria = {
-    uid: '',
-    name: '',
-    img: ''
-  };
+  
 
-  producto: Producto = {
+  productos: Producto[] = [{
+    uid:'',
     name: '',
-    imagen: '',
+    img: '',
     cantidad: null,
     precio: null,
     descripcion: ''
-  }
+  }]
+
 
   constructor(
-    private activedRoter: ActivatedRoute,
+    private activatedRoter: ActivatedRoute,
     private fs: FirestoreService
   ) { }
 
   ngOnInit() {
-   console.log(this.uid = this.activedRoter.snapshot.paramMap.get('id'));
-    console.log(this.uid)
-    this.getProu(this.uid);
+   console.log(this.uid = this.activatedRoter.snapshot.paramMap.get('id'));
+    this.getAllProductos();
   }
 
-  getProductos(uid:string){
-    const path = 'categorias';
-    this.fs.getDoc<Categoria>(path, uid).subscribe(res => {
-      this.categoria = res;
-    })
-  }
 
-  getProu(uid:string){
+  getAllProductos(){
   const path = 'categorias/' + this.uid + '/productos';
-  this.fs.getDoc<Producto>(path, uid).subscribe(res => {
-    this.producto = res;
+  this.fs.getCollection<Producto>(path).subscribe(res => {
+    this.productos = res;
+    console.log(res);
   })
   }
 

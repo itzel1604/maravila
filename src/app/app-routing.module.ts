@@ -22,8 +22,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule)
   },
   {
-    path: 'producto',
+    path: 'producto/:id',
     loadChildren: () => import('./pages/producto/producto.module').then( m => m.ProductoPageModule)
+  },
+  {
+    path: 'recuperarcontras',
+    loadChildren: () => import('./pages/recuperarcontras/recuperarcontras.module').then( m => m.RecuperarcontrasPageModule)
   }
 ];
 @NgModule({
